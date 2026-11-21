@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cari Bedanya — Tiga Dunia Kecil</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">&#9670;</span>
+      <div>
+        <h1>Cari Bedanya</h1>
+        <p class="subtitle">Tiga Dunia Kecil &mdash; temukan 7 perbedaan di setiap dunia</p>
+      </div>
+    </div>
+    <div id="hud" aria-live="polite">
+      <div class="hud-item"><span class="hud-label">Level</span><span id="hud-level" class="hud-value">1 / 3</span></div>
+      <div class="hud-item"><span class="hud-label">Ditemukan</span><span id="hud-found" class="hud-value">0 / 7</span></div>
+      <div class="hud-item"><span class="hud-label">Tersisa</span><span id="hud-left" class="hud-value">7</span></div>
+      <div class="hud-item"><span class="hud-label">Skor</span><span id="hud-score" class="hud-value">0</span></div>
+      <div class="hud-item timer"><span class="hud-label">Waktu</span><span id="hud-time" class="hud-value">2:00</span></div>
+      <div class="hud-item"><span class="hud-label">Hint</span><span id="hud-hints" class="hud-value">&#9679;&#9679;&#9679;</span></div>
+    </div>
+  </header>
+
+  <div id="timerbar"><div id="timerfill"></div></div>
+
+  <main id="stage">
+    <div id="panels">
+      <figure class="panel-wrap">
+        <canvas id="panel-left" width="560" height="420" data-panel="left"></canvas>
+        <figcaption>Gambar A &mdash; klik perbedaan di sini atau di Gambar B</figcaption>
+      </figure>
+      <div id="versus" aria-hidden="true">VS</div>
+      <figure class="panel-wrap">
+        <canvas id="panel-right" width="560" height="420" data-panel="right"></canvas>
+        <figcaption>Gambar B &mdash; hampir sama, tapi tidak persis</figcaption>
+      </figure>
+    </div>
+
+    <div id="controls">
+      <button id="btn-hint" type="button">Hint <kbd>H</kbd> <span id="hint-count">(3 tersisa)</span></button>
+      <button id="btn-restart" type="button">Ulangi Level <kbd>R</kbd></button>
+      <div id="level-picker" role="group" aria-label="Pilih level">
+        <button type="button" data-level="0" class="level-btn">1 Pasar</button>
+        <button type="button" data-level="1" class="level-btn">2 Terumbu</button>
+        <button type="button" data-level="2" class="level-btn">3 Pustaka</button>
+      </div>
+      <span id="message" aria-live="polite"></span>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div id="overlay-card">
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-text"></p>
+        <p id="overlay-score"></p>
+        <div id="overlay-buttons"></div>
+        <p class="overlay-keys">H = hint &nbsp;&middot;&nbsp; R = ulangi &nbsp;&middot;&nbsp; 1/2/3 = pilih level</p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="foot">
+    <span>Gambar digambar langsung oleh game &mdash; tanpa unduhan, tanpa jaringan.</span>
+    <span id="scene-name"></span>
+  </footer>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
